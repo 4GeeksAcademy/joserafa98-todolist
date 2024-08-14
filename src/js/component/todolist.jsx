@@ -20,12 +20,12 @@ const TodoList = () => {
 
       return (
         <>
-            <div className="container">
+            <div className="container" id="todoList">
                 <h1>To do List</h1>
                 <ul>
                     <li>
                         <input 
-                            className="form-control form-control-lg w-50" 
+                            className="form-control form-control-lg" 
                             type="text" 
                             placeholder="add your things here" 
                             aria-label=".form-control-lg example" 
@@ -40,6 +40,7 @@ const TodoList = () => {
                       </button></li>
                     ))}
                 </ul>
+                <div className="todoList-footer">{tasks.length} tasks left</div>
             </div>
         </>
     );
@@ -51,6 +52,6 @@ export default TodoList;
 //pseudocodigo
 //crear un titulo DONE
 //crear un input para añadir datos DONE
-//crear un footer que indique cuantos elementos quedan
+//crear un footer que indique cuantos elementos quedan DONE
 // que cada cosa que añada al input de genere en una lista abajo del mismo DONE
-//añadir boton de eliminar tareas
+//añadir boton de eliminar tareas DONE
