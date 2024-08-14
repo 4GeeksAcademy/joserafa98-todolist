@@ -1,8 +1,11 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {  faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = () => {
     const [inputValue, setInputValue] = useState('');
-    const [tasks, setTasks] = useState([]);
+    //const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState(['Make food', 'Clean the House', 'Study'])
 
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && inputValue.trim() !== '') {
@@ -10,8 +13,12 @@ const TodoList = () => {
             setInputValue('');
         }
     };
+    const deleteTask = (index) => {
+        const updatedTasks = tasks.filter((_, i) => i !== index);
+        setTasks(updatedTasks);
+      };
 
-    return (
+      return (
         <>
             <div className="container">
                 <h1>To do List</h1>
@@ -27,18 +34,16 @@ const TodoList = () => {
                             onKeyDown={handleKeyDown}
                         />
                     </li>
-                    <li>Make food</li>
-                    <li>Clean the House</li>
-                    <li>Study</li>
                     {tasks.map((task, index) => (
-                        <li key={index}>{task}</li>
+                        <li key={index}>{task} <button className="deleteButton" onClick={() => deleteTask(index)}>
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button></li>
                     ))}
                 </ul>
             </div>
         </>
     );
 }
-
 export default TodoList;
 
 
