@@ -4,7 +4,6 @@ import {  faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const TodoList = () => {
     const [inputValue, setInputValue] = useState('');
-    //const [tasks, setTasks] = useState([]);
     const [tasks, setTasks] = useState(['Make food', 'Clean the House', 'Study'])
 
     const handleKeyDown = (e) => {
@@ -46,12 +45,3 @@ const TodoList = () => {
     );
 }
 export default TodoList;
-
-
-
-//pseudocodigo
-//crear un titulo DONE
-//crear un input para añadir datos DONE
-//crear un footer que indique cuantos elementos quedan DONE
-// que cada cosa que añada al input de genere en una lista abajo del mismo DONE
-//añadir boton de eliminar tareas DONE
