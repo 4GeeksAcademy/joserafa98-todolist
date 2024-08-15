@@ -27,13 +27,15 @@ body {
 }
 
 .container:before {
-    left: 5px;
+    left: 2px;
+    bottom: -7px;
     z-index: -2;
     box-shadow: 0 20px 25px rgba(0, 0, 0, 0.05);
 }
 
 .container:after {
-    left: 15px;
+    left: 5px;
+    bottom: -14px;
     z-index: -3;
     box-shadow: 0 30px 35px rgba(0, 0, 0, 0.05);
 }
